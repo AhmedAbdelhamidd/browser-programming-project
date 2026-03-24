@@ -129,7 +129,7 @@ function exerciseCardHTML(exercise, isCompleted) {
         ${isCompleted ? `<span class="text-accent">${icon('checkCircle', 'icon')}</span>` : ''}
       </div>
       <h3 style="margin-bottom:0.5rem;font-size:1.125rem;font-weight:600;color:var(--card-foreground);">${exercise.title}</h3>
-      <p class="line-clamp-2" style="margin-bottom:1rem;font-size:0.875rem;color:var(--muted-foreground);">${exercise.description}</p>
+      <p class="line-clamp-2" style="margin-bottom:1rem;font-size:0.875rem;color:var(--muted-foreground);">${escapeHtml(exercise.description)}</p>
       <div style="display:flex;align-items:center;gap:1rem;font-size:0.75rem;color:var(--muted-foreground);">
         <span class="${diffClass}" style="display:flex;align-items:center;gap:0.25rem;">
           ${icon('clock', 'icon-sm')} ${exercise.difficulty}
