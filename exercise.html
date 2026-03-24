@@ -71,7 +71,7 @@
             </button>
             ${showHints ? `
               <ul style="margin-top:0.75rem;padding-left:1.5rem;" class="space-y-2">
-                ${exercise.hints.map(h => `<li style="list-style:disc;font-size:0.875rem;color:var(--muted-foreground);">${h}</li>`).join('')}
+                ${exercise.hints.map(h => `<li style="list-style:disc;font-size:0.875rem;color:var(--muted-foreground);">${escapeHtml(h)}</li>`).join('')}
               </ul>
             ` : ''}
           </div>
