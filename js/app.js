@@ -1,5 +1,10 @@
 // ── Shared utilities and progress management ──
 
+// Escape HTML so tags render as text
+function escapeHtml(str) {
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
 // SVG icon paths (subset of lucide icons used)
 const icons = {
   code2: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>',
@@ -124,7 +129,7 @@ function exerciseCardHTML(exercise, isCompleted) {
         ${isCompleted ? `<span class="text-accent">${icon('checkCircle', 'icon')}</span>` : ''}
       </div>
       <h3 style="margin-bottom:0.5rem;font-size:1.125rem;font-weight:600;color:var(--card-foreground);">${exercise.title}</h3>
-      <p class="line-clamp-2" style="margin-bottom:1rem;font-size:0.875rem;color:var(--muted-foreground);">${exercise.description}</p>
+      <p class="line-clamp-2" style="margin-bottom:1rem;font-size:0.875rem;color:var(--muted-foreground);">${escapeHtml(exercise.description)}</p>
       <div style="display:flex;align-items:center;gap:1rem;font-size:0.75rem;color:var(--muted-foreground);">
         <span class="${diffClass}" style="display:flex;align-items:center;gap:0.25rem;">
           ${icon('clock', 'icon-sm')} ${exercise.difficulty}

@@ -54,13 +54,13 @@
               ${isCompleted ? `<span class="text-accent text-xs" style="display:flex;align-items:center;gap:0.25rem;">${icon('checkCircle', 'icon')} Completed</span>` : ''}
             </div>
             <h1 style="font-size:1.875rem;font-weight:700;margin-bottom:0.75rem;">${exercise.title}</h1>
-            <p class="text-muted">${exercise.description}</p>
+            <p class="text-muted">${escapeHtml(exercise.description)}</p>
           </div>
 
           <!-- Instructions -->
           <div class="card mb-6" style="cursor:default;">
             <h2 style="font-size:1.125rem;font-weight:600;margin-bottom:0.75rem;">Instructions</h2>
-            <p class="text-sm text-muted" style="line-height:1.7;">${exercise.instructions}</p>
+            <p class="text-sm text-muted" style="line-height:1.7;">${escapeHtml(exercise.instructions)}</p>
           </div>
 
           <!-- Hints -->
@@ -71,7 +71,7 @@
             </button>
             ${showHints ? `
               <ul style="margin-top:0.75rem;padding-left:1.5rem;" class="space-y-2">
-                ${exercise.hints.map(h => `<li style="list-style:disc;font-size:0.875rem;color:var(--muted-foreground);">${h}</li>`).join('')}
+                ${exercise.hints.map(h => `<li style="list-style:disc;font-size:0.875rem;color:var(--muted-foreground);">${escapeHtml(h)}</li>`).join('')}
               </ul>
             ` : ''}
           </div>
@@ -82,7 +82,7 @@
               <h2 style="font-size:1.125rem;font-weight:600;">Your Code</h2>
               <button id="reset-code" class="btn btn-outline btn-sm mono">Reset</button>
             </div>
-            <textarea id="code-editor" class="code-editor" spellcheck="false">${code}</textarea>
+            <textarea id="code-editor" class="code-editor" spellcheck="false">${escapeHtml(code)}</textarea>
           </div>
 
           <!-- Actions -->
@@ -97,7 +97,7 @@
           ${showSolution ? `
             <div class="solution-block">
               <h2 style="font-size:1.125rem;font-weight:600;color:var(--primary);margin-bottom:0.75rem;">Solution</h2>
-              <pre>${exercise.solution}</pre>
+              <pre>${escapeHtml(exercise.solution)}</pre>
             </div>
           ` : ''}
         `;
