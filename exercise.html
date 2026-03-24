@@ -82,7 +82,7 @@
               <h2 style="font-size:1.125rem;font-weight:600;">Your Code</h2>
               <button id="reset-code" class="btn btn-outline btn-sm mono">Reset</button>
             </div>
-            <textarea id="code-editor" class="code-editor" spellcheck="false">${code}</textarea>
+            <textarea id="code-editor" class="code-editor" spellcheck="false">${escapeHtml(code)}</textarea>
           </div>
 
           <!-- Actions -->
