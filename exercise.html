@@ -54,7 +54,7 @@
               ${isCompleted ? `<span class="text-accent text-xs" style="display:flex;align-items:center;gap:0.25rem;">${icon('checkCircle', 'icon')} Completed</span>` : ''}
             </div>
             <h1 style="font-size:1.875rem;font-weight:700;margin-bottom:0.75rem;">${exercise.title}</h1>
-            <p class="text-muted">${exercise.description}</p>
+            <p class="text-muted">${escapeHtml(exercise.description)}</p>
           </div>
 
           <!-- Instructions -->
