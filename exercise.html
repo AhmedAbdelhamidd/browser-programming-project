@@ -97,7 +97,7 @@
           ${showSolution ? `
             <div class="solution-block">
               <h2 style="font-size:1.125rem;font-weight:600;color:var(--primary);margin-bottom:0.75rem;">Solution</h2>
-              <pre>${exercise.solution}</pre>
+              <pre>${escapeHtml(exercise.solution)}</pre>
             </div>
           ` : ''}
         `;
